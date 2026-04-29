@@ -1,0 +1,753 @@
+{
+  "input_prefix": "data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30",
+  "artifact_prefix": "data/artifacts/eegbci_subjectwise_final",
+  "subject_id": 5,
+  "mode": "full",
+  "history": [
+    {
+      "trial_index": 0,
+      "subject_id": 5,
+      "run_id": 4,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6785872703750259,
+      "probabilities": [
+        0.6785872703750259,
+        0.3214127296249742
+      ],
+      "positive_class_probability": 0.3214127296249742,
+      "correct": false
+    },
+    {
+      "trial_index": 1,
+      "subject_id": 5,
+      "run_id": 4,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6077075967704517,
+      "probabilities": [
+        0.6077075967704517,
+        0.39229240322954834
+      ],
+      "positive_class_probability": 0.39229240322954834,
+      "correct": true
+    },
+    {
+      "trial_index": 2,
+      "subject_id": 5,
+      "run_id": 4,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6810272764691404,
+      "probabilities": [
+        0.6810272764691404,
+        0.31897272353085965
+      ],
+      "positive_class_probability": 0.31897272353085965,
+      "correct": true
+    },
+    {
+      "trial_index": 3,
+      "subject_id": 5,
+      "run_id": 4,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6978557561084373,
+      "probabilities": [
+        0.6978557561084373,
+        0.3021442438915624
+      ],
+      "positive_class_probability": 0.3021442438915624,
+      "correct": false
+    },
+    {
+      "trial_index": 4,
+      "subject_id": 5,
+      "run_id": 4,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.7137336666200345,
+      "probabilities": [
+        0.7137336666200345,
+        0.2862663333799655
+      ],
+      "positive_class_probability": 0.2862663333799655,
+      "correct": false
+    },
+    {
+      "trial_index": 5,
+      "subject_id": 5,
+      "run_id": 4,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.7551109981666797,
+      "probabilities": [
+        0.7551109981666797,
+        0.24488900183332013
+      ],
+      "positive_class_probability": 0.24488900183332013,
+      "correct": true
+    },
+    {
+      "trial_index": 6,
+      "subject_id": 5,
+      "run_id": 4,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6719639951535686,
+      "probabilities": [
+        0.6719639951535686,
+        0.32803600484643136
+      ],
+      "positive_class_probability": 0.32803600484643136,
+      "correct": true
+    },
+    {
+      "trial_index": 7,
+      "subject_id": 5,
+      "run_id": 4,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6473672636188179,
+      "probabilities": [
+        0.6473672636188179,
+        0.352632736381182
+      ],
+      "positive_class_probability": 0.352632736381182,
+      "correct": false
+    },
+    {
+      "trial_index": 8,
+      "subject_id": 5,
+      "run_id": 4,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 1,
+      "predicted_label_name": "T2",
+      "confidence": 0.5709286782764528,
+      "probabilities": [
+        0.4290713217235473,
+        0.5709286782764528
+      ],
+      "positive_class_probability": 0.5709286782764528,
+      "correct": false
+    },
+    {
+      "trial_index": 9,
+      "subject_id": 5,
+      "run_id": 4,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6675389033757182,
+      "probabilities": [
+        0.6675389033757182,
+        0.3324610966242819
+      ],
+      "positive_class_probability": 0.3324610966242819,
+      "correct": false
+    },
+    {
+      "trial_index": 10,
+      "subject_id": 5,
+      "run_id": 4,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 1,
+      "predicted_label_name": "T2",
+      "confidence": 0.5723349715431036,
+      "probabilities": [
+        0.4276650284568963,
+        0.5723349715431036
+      ],
+      "positive_class_probability": 0.5723349715431036,
+      "correct": true
+    },
+    {
+      "trial_index": 11,
+      "subject_id": 5,
+      "run_id": 4,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6977533125682904,
+      "probabilities": [
+        0.6977533125682904,
+        0.3022466874317094
+      ],
+      "positive_class_probability": 0.3022466874317094,
+      "correct": true
+    },
+    {
+      "trial_index": 12,
+      "subject_id": 5,
+      "run_id": 4,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6376209147981676,
+      "probabilities": [
+        0.6376209147981676,
+        0.36237908520183243
+      ],
+      "positive_class_probability": 0.36237908520183243,
+      "correct": true
+    },
+    {
+      "trial_index": 13,
+      "subject_id": 5,
+      "run_id": 4,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.7953178008020932,
+      "probabilities": [
+        0.7953178008020932,
+        0.20468219919790676
+      ],
+      "positive_class_probability": 0.20468219919790676,
+      "correct": false
+    },
+    {
+      "trial_index": 14,
+      "subject_id": 5,
+      "run_id": 4,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.5308058204675818,
+      "probabilities": [
+        0.5308058204675818,
+        0.46919417953241815
+      ],
+      "positive_class_probability": 0.46919417953241815,
+      "correct": false
+    },
+    {
+      "trial_index": 15,
+      "subject_id": 5,
+      "run_id": 8,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 1,
+      "predicted_label_name": "T2",
+      "confidence": 0.5499271784261968,
+      "probabilities": [
+        0.4500728215738032,
+        0.5499271784261968
+      ],
+      "positive_class_probability": 0.5499271784261968,
+      "correct": true
+    },
+    {
+      "trial_index": 16,
+      "subject_id": 5,
+      "run_id": 8,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.7478641384515253,
+      "probabilities": [
+        0.7478641384515253,
+        0.2521358615484744
+      ],
+      "positive_class_probability": 0.2521358615484744,
+      "correct": true
+    },
+    {
+      "trial_index": 17,
+      "subject_id": 5,
+      "run_id": 8,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.7769527072666575,
+      "probabilities": [
+        0.7769527072666575,
+        0.2230472927333425
+      ],
+      "positive_class_probability": 0.2230472927333425,
+      "correct": false
+    },
+    {
+      "trial_index": 18,
+      "subject_id": 5,
+      "run_id": 8,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6201822677637747,
+      "probabilities": [
+        0.6201822677637747,
+        0.37981773223622517
+      ],
+      "positive_class_probability": 0.37981773223622517,
+      "correct": true
+    },
+    {
+      "trial_index": 19,
+      "subject_id": 5,
+      "run_id": 8,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6463745081148518,
+      "probabilities": [
+        0.6463745081148518,
+        0.3536254918851482
+      ],
+      "positive_class_probability": 0.3536254918851482,
+      "correct": true
+    },
+    {
+      "trial_index": 20,
+      "subject_id": 5,
+      "run_id": 8,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.66935696452997,
+      "probabilities": [
+        0.66935696452997,
+        0.3306430354700301
+      ],
+      "positive_class_probability": 0.3306430354700301,
+      "correct": false
+    },
+    {
+      "trial_index": 21,
+      "subject_id": 5,
+      "run_id": 8,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.7261617181117515,
+      "probabilities": [
+        0.7261617181117515,
+        0.27383828188824844
+      ],
+      "positive_class_probability": 0.27383828188824844,
+      "correct": false
+    },
+    {
+      "trial_index": 22,
+      "subject_id": 5,
+      "run_id": 8,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 1,
+      "predicted_label_name": "T2",
+      "confidence": 0.6124010141104351,
+      "probabilities": [
+        0.3875989858895649,
+        0.6124010141104351
+      ],
+      "positive_class_probability": 0.6124010141104351,
+      "correct": false
+    },
+    {
+      "trial_index": 23,
+      "subject_id": 5,
+      "run_id": 8,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6059006513806301,
+      "probabilities": [
+        0.6059006513806301,
+        0.39409934861936974
+      ],
+      "positive_class_probability": 0.39409934861936974,
+      "correct": true
+    },
+    {
+      "trial_index": 24,
+      "subject_id": 5,
+      "run_id": 8,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6364594638802982,
+      "probabilities": [
+        0.6364594638802982,
+        0.3635405361197018
+      ],
+      "positive_class_probability": 0.3635405361197018,
+      "correct": false
+    },
+    {
+      "trial_index": 25,
+      "subject_id": 5,
+      "run_id": 8,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.567524624696243,
+      "probabilities": [
+        0.567524624696243,
+        0.43247537530375707
+      ],
+      "positive_class_probability": 0.43247537530375707,
+      "correct": true
+    },
+    {
+      "trial_index": 26,
+      "subject_id": 5,
+      "run_id": 8,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6719043918954829,
+      "probabilities": [
+        0.6719043918954829,
+        0.32809560810451716
+      ],
+      "positive_class_probability": 0.32809560810451716,
+      "correct": false
+    },
+    {
+      "trial_index": 27,
+      "subject_id": 5,
+      "run_id": 8,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 1,
+      "predicted_label_name": "T2",
+      "confidence": 0.6304793585329743,
+      "probabilities": [
+        0.3695206414670258,
+        0.6304793585329743
+      ],
+      "positive_class_probability": 0.6304793585329743,
+      "correct": true
+    },
+    {
+      "trial_index": 28,
+      "subject_id": 5,
+      "run_id": 8,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 1,
+      "predicted_label_name": "T2",
+      "confidence": 0.646773401169076,
+      "probabilities": [
+        0.353226598830924,
+        0.646773401169076
+      ],
+      "positive_class_probability": 0.646773401169076,
+      "correct": false
+    },
+    {
+      "trial_index": 29,
+      "subject_id": 5,
+      "run_id": 8,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 1,
+      "predicted_label_name": "T2",
+      "confidence": 0.579835965855683,
+      "probabilities": [
+        0.4201640341443173,
+        0.579835965855683
+      ],
+      "positive_class_probability": 0.579835965855683,
+      "correct": true
+    },
+    {
+      "trial_index": 30,
+      "subject_id": 5,
+      "run_id": 12,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6676090617378334,
+      "probabilities": [
+        0.6676090617378334,
+        0.33239093826216654
+      ],
+      "positive_class_probability": 0.33239093826216654,
+      "correct": true
+    },
+    {
+      "trial_index": 31,
+      "subject_id": 5,
+      "run_id": 12,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 1,
+      "predicted_label_name": "T2",
+      "confidence": 0.5,
+      "probabilities": [
+        0.5,
+        0.5
+      ],
+      "positive_class_probability": 0.5,
+      "correct": true
+    },
+    {
+      "trial_index": 32,
+      "subject_id": 5,
+      "run_id": 12,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6599054403335127,
+      "probabilities": [
+        0.6599054403335127,
+        0.3400945596664872
+      ],
+      "positive_class_probability": 0.3400945596664872,
+      "correct": true
+    },
+    {
+      "trial_index": 33,
+      "subject_id": 5,
+      "run_id": 12,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6056200299924548,
+      "probabilities": [
+        0.6056200299924548,
+        0.3943799700075453
+      ],
+      "positive_class_probability": 0.3943799700075453,
+      "correct": false
+    },
+    {
+      "trial_index": 34,
+      "subject_id": 5,
+      "run_id": 12,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.5926089509617881,
+      "probabilities": [
+        0.5926089509617881,
+        0.4073910490382117
+      ],
+      "positive_class_probability": 0.4073910490382117,
+      "correct": true
+    },
+    {
+      "trial_index": 35,
+      "subject_id": 5,
+      "run_id": 12,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.670328239526936,
+      "probabilities": [
+        0.670328239526936,
+        0.32967176047306396
+      ],
+      "positive_class_probability": 0.32967176047306396,
+      "correct": false
+    },
+    {
+      "trial_index": 36,
+      "subject_id": 5,
+      "run_id": 12,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6610042079639296,
+      "probabilities": [
+        0.6610042079639296,
+        0.33899579203607033
+      ],
+      "positive_class_probability": 0.33899579203607033,
+      "correct": true
+    },
+    {
+      "trial_index": 37,
+      "subject_id": 5,
+      "run_id": 12,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.796404102303547,
+      "probabilities": [
+        0.796404102303547,
+        0.20359589769645323
+      ],
+      "positive_class_probability": 0.20359589769645323,
+      "correct": false
+    },
+    {
+      "trial_index": 38,
+      "subject_id": 5,
+      "run_id": 12,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 1,
+      "predicted_label_name": "T2",
+      "confidence": 0.5822859423310472,
+      "probabilities": [
+        0.41771405766895275,
+        0.5822859423310472
+      ],
+      "positive_class_probability": 0.5822859423310472,
+      "correct": true
+    },
+    {
+      "trial_index": 39,
+      "subject_id": 5,
+      "run_id": 12,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6913610138147338,
+      "probabilities": [
+        0.6913610138147338,
+        0.3086389861852662
+      ],
+      "positive_class_probability": 0.3086389861852662,
+      "correct": true
+    },
+    {
+      "trial_index": 40,
+      "subject_id": 5,
+      "run_id": 12,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6771671605608287,
+      "probabilities": [
+        0.6771671605608287,
+        0.32283283943917124
+      ],
+      "positive_class_probability": 0.32283283943917124,
+      "correct": false
+    },
+    {
+      "trial_index": 41,
+      "subject_id": 5,
+      "run_id": 12,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.5903191523002741,
+      "probabilities": [
+        0.5903191523002741,
+        0.40968084769972596
+      ],
+      "positive_class_probability": 0.40968084769972596,
+      "correct": true
+    },
+    {
+      "trial_index": 42,
+      "subject_id": 5,
+      "run_id": 12,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 0,
+      "predicted_label_name": "T1",
+      "confidence": 0.6977831254406196,
+      "probabilities": [
+        0.6977831254406196,
+        0.30221687455938023
+      ],
+      "positive_class_probability": 0.30221687455938023,
+      "correct": false
+    },
+    {
+      "trial_index": 43,
+      "subject_id": 5,
+      "run_id": 12,
+      "true_label": 0,
+      "true_label_name": "T1",
+      "predicted_label": 1,
+      "predicted_label_name": "T2",
+      "confidence": 0.5,
+      "probabilities": [
+        0.5,
+        0.5
+      ],
+      "positive_class_probability": 0.5,
+      "correct": false
+    },
+    {
+      "trial_index": 44,
+      "subject_id": 5,
+      "run_id": 12,
+      "true_label": 1,
+      "true_label_name": "T2",
+      "predicted_label": 1,
+      "predicted_label_name": "T2",
+      "confidence": 0.6625079139870982,
+      "probabilities": [
+        0.33749208601290176,
+        0.6625079139870982
+      ],
+      "positive_class_probability": 0.6625079139870982,
+      "correct": true
+    }
+  ],
+  "summary": {
+    "current_trial_index": 45,
+    "total_trials": 45,
+    "processed_trials": 45,
+    "remaining_trials": 0,
+    "correct_count": 24,
+    "incorrect_count": 21,
+    "accuracy": 0.5333333333333333,
+    "prediction_counts": {
+      "0": 34,
+      "1": 11
+    },
+    "last_prediction": 1,
+    "last_prediction_name": "T2",
+    "last_confidence": 0.6625079139870982,
+    "last_correctness": true,
+    "subjects_present": [
+      5
+    ],
+    "run_ids_present": [
+      4,
+      8,
+      12
+    ]
+  }
+}

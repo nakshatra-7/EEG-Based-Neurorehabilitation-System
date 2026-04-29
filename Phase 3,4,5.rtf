@@ -1,0 +1,1879 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2869
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0   --output-json data/results/eegbci_s1_s5_w05_25_motor_cmp.json\
+Trial dataset summary:\
+  X shape: (225, 64, 321)\
+  y shape: (225,)\
+  trial_count: 225\
+  selected_event_id: \{'T1': 2, 'T2': 3\}\
+  label_map: \{'T1': 0, 'T2': 1\}\
+  subjects: [1, 2, 3, 4, 5]\
+  run_ids present: [4, 8, 12]\
+  label_counts: \{0: 113, 1: 112\}\
+Verification note: if you intend to use left-vs-right labels in Phase 2, confirm the annotation semantics with scripts.inspect_dataset before relying on T1/T2.\
+Saved arrays to: data/processed/eegbci_s1_s5_lr_w05_25.npz\
+Saved metadata to: data/processed/eegbci_s1_s5_lr_w05_25.json\
+Preprocessed dataset summary:\
+  X shape: (225, 3, 321)\
+  y shape: (225,)\
+  trial_count: 225\
+  sfreq: 160.0\
+  epoch_window: \{'tmin': 0.5, 'tmax': 2.5\}\
+  selected_event_id: \{'T1': 2, 'T2': 3\}\
+  label_map: \{'T1': 0, 'T2': 1\}\
+  subjects: [1, 2, 3, 4, 5]\
+  run_ids present: [4, 8, 12]\
+  label_counts: \{0: 113, 1: 112\}\
+  preprocessing: \{'bandpass_hz': \{'l_freq': 8.0, 'h_freq': 30.0\}, 'selected_channels': ['C3', 'Cz', 'C4'], 'original_channel_count': 64, 'final_channel_count': 3\}\
+Saved arrays to: data/processed/eegbci_s1_s5_lr_w05_25_motor.npz\
+Saved metadata to: data/processed/eegbci_s1_s5_lr_w05_25_motor.json\
+Computing rank from data with rank=None\
+    Using tolerance 3.9e-06 (2.2e-16 eps * 3 dim * 5.9e+09  max singular value)\
+    Estimated rank (data): 3\
+    data: rank 3 computed from 3 data channels with 0 projectors\
+Reducing data rank from 3 -> 3\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 3.9e-06 (2.2e-16 eps * 3 dim * 5.9e+09  max singular value)\
+    Estimated rank (data): 3\
+    data: rank 3 computed from 3 data channels with 0 projectors\
+Reducing data rank from 3 -> 3\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.5333\
+  precision=0.5200\
+  recall=0.5909\
+  f1_score=0.5532\
+  confusion_matrix=[[11, 12], [9, 13]]\
+  train_size=180, test_size=45\
+  n_channels=3, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.5778\
+  precision=0.5600\
+  recall=0.6364\
+  f1_score=0.5957\
+  confusion_matrix=[[12, 11], [8, 14]]\
+  train_size=180, test_size=45\
+  n_channels=3, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor_cmp.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.preprocess_trials \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25 \\\
+  --output-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor3 \\\
+  --channels C3,Cz,C4\
+\
+python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor3 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 4 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor3_cmp.json\
+Preprocessed dataset summary:\
+  X shape: (225, 3, 321)\
+  y shape: (225,)\
+  trial_count: 225\
+  sfreq: 160.0\
+  epoch_window: \{'tmin': 0.5, 'tmax': 2.5\}\
+  selected_event_id: \{'T1': 2, 'T2': 3\}\
+  label_map: \{'T1': 0, 'T2': 1\}\
+  subjects: [1, 2, 3, 4, 5]\
+  run_ids present: [4, 8, 12]\
+  label_counts: \{0: 113, 1: 112\}\
+  preprocessing: \{'bandpass_hz': \{'l_freq': 8.0, 'h_freq': 30.0\}, 'selected_channels': ['C3', 'Cz', 'C4'], 'original_channel_count': 64, 'final_channel_count': 3\}\
+Saved arrays to: data/processed/eegbci_s1_s5_lr_w05_25_motor3.npz\
+Saved metadata to: data/processed/eegbci_s1_s5_lr_w05_25_motor3.json\
+Computing rank from data with rank=None\
+    Using tolerance 3.9e-06 (2.2e-16 eps * 3 dim * 5.9e+09  max singular value)\
+    Estimated rank (data): 3\
+    data: rank 3 computed from 3 data channels with 0 projectors\
+Reducing data rank from 3 -> 3\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 3.9e-06 (2.2e-16 eps * 3 dim * 5.9e+09  max singular value)\
+    Estimated rank (data): 3\
+    data: rank 3 computed from 3 data channels with 0 projectors\
+Reducing data rank from 3 -> 3\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.5333\
+  precision=0.5200\
+  recall=0.5909\
+  f1_score=0.5532\
+  confusion_matrix=[[11, 12], [9, 13]]\
+  train_size=180, test_size=45\
+  n_channels=3, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.5778\
+  precision=0.5600\
+  recall=0.6364\
+  f1_score=0.5957\
+  confusion_matrix=[[12, 11], [8, 14]]\
+  train_size=180, test_size=45\
+  n_channels=3, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor3_cmp.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.preprocess_trials \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25 \\\
+  --output-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10 \\\
+  --channels C3,C1,Cz,C2,C4,CP3,CP1,CPz,CP2,CP4\
+\
+python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 4 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_cmp.json\
+Preprocessed dataset summary:\
+  X shape: (225, 10, 321)\
+  y shape: (225,)\
+  trial_count: 225\
+  sfreq: 160.0\
+  epoch_window: \{'tmin': 0.5, 'tmax': 2.5\}\
+  selected_event_id: \{'T1': 2, 'T2': 3\}\
+  label_map: \{'T1': 0, 'T2': 1\}\
+  subjects: [1, 2, 3, 4, 5]\
+  run_ids present: [4, 8, 12]\
+  label_counts: \{0: 113, 1: 112\}\
+  preprocessing: \{'bandpass_hz': \{'l_freq': 8.0, 'h_freq': 30.0\}, 'selected_channels': ['C3', 'C1', 'Cz', 'C2', 'C4', 'CP3', 'CP1', 'CPz', 'CP2', 'CP4'], 'original_channel_count': 64, 'final_channel_count': 10\}\
+Saved arrays to: data/processed/eegbci_s1_s5_lr_w05_25_motor10.npz\
+Saved metadata to: data/processed/eegbci_s1_s5_lr_w05_25_motor10.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.5556\
+  precision=0.5357\
+  recall=0.6818\
+  f1_score=0.6000\
+  confusion_matrix=[[10, 13], [7, 15]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.5333\
+  precision=0.5238\
+  recall=0.5000\
+  f1_score=0.5116\
+  confusion_matrix=[[13, 10], [11, 11]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_cmp.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.preprocess_trials \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25 \\\
+  --output-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor15 \\\
+  --channels FC3,FC1,FCz,FC2,FC4,C3,C1,Cz,C2,C4,CP3,CP1,CPz,CP2,CP4\
+\
+python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor15 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 4 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor15_cmp.json\
+Preprocessed dataset summary:\
+  X shape: (225, 15, 321)\
+  y shape: (225,)\
+  trial_count: 225\
+  sfreq: 160.0\
+  epoch_window: \{'tmin': 0.5, 'tmax': 2.5\}\
+  selected_event_id: \{'T1': 2, 'T2': 3\}\
+  label_map: \{'T1': 0, 'T2': 1\}\
+  subjects: [1, 2, 3, 4, 5]\
+  run_ids present: [4, 8, 12]\
+  label_counts: \{0: 113, 1: 112\}\
+  preprocessing: \{'bandpass_hz': \{'l_freq': 8.0, 'h_freq': 30.0\}, 'selected_channels': ['FC3', 'FC1', 'FCz', 'FC2', 'FC4', 'C3', 'C1', 'Cz', 'C2', 'C4', 'CP3', 'CP1', 'CPz', 'CP2', 'CP4'], 'original_channel_count': 64, 'final_channel_count': 15\}\
+Saved arrays to: data/processed/eegbci_s1_s5_lr_w05_25_motor15.npz\
+Saved metadata to: data/processed/eegbci_s1_s5_lr_w05_25_motor15.json\
+Computing rank from data with rank=None\
+    Using tolerance 4.3e-05 (2.2e-16 eps * 15 dim * 1.3e+10  max singular value)\
+    Estimated rank (data): 15\
+    data: rank 15 computed from 15 data channels with 0 projectors\
+Reducing data rank from 15 -> 15\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 4.3e-05 (2.2e-16 eps * 15 dim * 1.3e+10  max singular value)\
+    Estimated rank (data): 15\
+    data: rank 15 computed from 15 data channels with 0 projectors\
+Reducing data rank from 15 -> 15\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.4000\
+  precision=0.3810\
+  recall=0.3636\
+  f1_score=0.3721\
+  confusion_matrix=[[10, 13], [14, 8]]\
+  train_size=180, test_size=45\
+  n_channels=15, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.4889\
+  precision=0.4737\
+  recall=0.4091\
+  f1_score=0.4390\
+  confusion_matrix=[[13, 10], [13, 9]]\
+  train_size=180, test_size=45\
+  n_channels=15, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor15_cmp.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 2 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_csp2_cmp.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.4222\
+  precision=0.4000\
+  recall=0.3636\
+  f1_score=0.3810\
+  confusion_matrix=[[11, 12], [14, 8]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=2\
+\
+csp_logreg:\
+  accuracy=0.4444\
+  precision=0.4211\
+  recall=0.3636\
+  f1_score=0.3902\
+  confusion_matrix=[[12, 11], [14, 8]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=2\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_csp2_cmp.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 4 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_csp4_cmp.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.5556\
+  precision=0.5357\
+  recall=0.6818\
+  f1_score=0.6000\
+  confusion_matrix=[[10, 13], [7, 15]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.5333\
+  precision=0.5238\
+  recall=0.5000\
+  f1_score=0.5116\
+  confusion_matrix=[[13, 10], [11, 11]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_csp4_cmp.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 6 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_csp6_cmp.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.5333\
+  precision=0.5185\
+  recall=0.6364\
+  f1_score=0.5714\
+  confusion_matrix=[[10, 13], [8, 14]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+\
+csp_logreg:\
+  accuracy=0.4889\
+  precision=0.4762\
+  recall=0.4545\
+  f1_score=0.4651\
+  confusion_matrix=[[12, 11], [12, 10]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_csp6_cmp.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 2 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_both_csp2.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.4222\
+  precision=0.4000\
+  recall=0.3636\
+  f1_score=0.3810\
+  confusion_matrix=[[11, 12], [14, 8]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=2\
+\
+csp_logreg:\
+  accuracy=0.4444\
+  precision=0.4211\
+  recall=0.3636\
+  f1_score=0.3902\
+  confusion_matrix=[[12, 11], [14, 8]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=2\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_both_csp2.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 4 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_both_csp4.json\
+\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.5556\
+  precision=0.5357\
+  recall=0.6818\
+  f1_score=0.6000\
+  confusion_matrix=[[10, 13], [7, 15]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.5333\
+  precision=0.5238\
+  recall=0.5000\
+  f1_score=0.5116\
+  confusion_matrix=[[13, 10], [11, 11]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_both_csp4.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 6 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_both_csp6.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.5333\
+  precision=0.5185\
+  recall=0.6364\
+  f1_score=0.5714\
+  confusion_matrix=[[10, 13], [8, 14]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+\
+csp_logreg:\
+  accuracy=0.4889\
+  precision=0.4762\
+  recall=0.4545\
+  f1_score=0.4651\
+  confusion_matrix=[[12, 11], [12, 10]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_both_csp6.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.preprocess_trials \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25 \\\
+  --output-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_12 \\\
+  --l-freq 8.0 \\\
+  --h-freq 12.0 \\\
+  --channels C3,C1,Cz,C2,C4,CP3,CP1,CPz,CP2,CP4\
+\
+python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_12 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 4 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_8_12_cmp.json\
+Preprocessed dataset summary:\
+  X shape: (225, 10, 321)\
+  y shape: (225,)\
+  trial_count: 225\
+  sfreq: 160.0\
+  epoch_window: \{'tmin': 0.5, 'tmax': 2.5\}\
+  selected_event_id: \{'T1': 2, 'T2': 3\}\
+  label_map: \{'T1': 0, 'T2': 1\}\
+  subjects: [1, 2, 3, 4, 5]\
+  run_ids present: [4, 8, 12]\
+  label_counts: \{0: 113, 1: 112\}\
+  preprocessing: \{'bandpass_hz': \{'l_freq': 8.0, 'h_freq': 12.0\}, 'selected_channels': ['C3', 'C1', 'Cz', 'C2', 'C4', 'CP3', 'CP1', 'CPz', 'CP2', 'CP4'], 'original_channel_count': 64, 'final_channel_count': 10\}\
+Saved arrays to: data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_12.npz\
+Saved metadata to: data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_12.json\
+Computing rank from data with rank=None\
+    Using tolerance 1.7e-05 (2.2e-16 eps * 10 dim * 7.6e+09  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 1.7e-05 (2.2e-16 eps * 10 dim * 7.6e+09  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.4667\
+  precision=0.4615\
+  recall=0.5455\
+  f1_score=0.5000\
+  confusion_matrix=[[9, 14], [10, 12]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.4889\
+  precision=0.4762\
+  recall=0.4545\
+  f1_score=0.4651\
+  confusion_matrix=[[12, 11], [12, 10]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_8_12_cmp.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.preprocess_trials \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25 \\\
+  --output-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_12_30 \\\
+  --l-freq 12.0 \\\
+  --h-freq 30.0 \\\
+  --channels C3,C1,Cz,C2,C4,CP3,CP1,CPz,CP2,CP4\
+\
+python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_12_30 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 4 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_12_30_cmp.json\
+Preprocessed dataset summary:\
+  X shape: (225, 10, 321)\
+  y shape: (225,)\
+  trial_count: 225\
+  sfreq: 160.0\
+  epoch_window: \{'tmin': 0.5, 'tmax': 2.5\}\
+  selected_event_id: \{'T1': 2, 'T2': 3\}\
+  label_map: \{'T1': 0, 'T2': 1\}\
+  subjects: [1, 2, 3, 4, 5]\
+  run_ids present: [4, 8, 12]\
+  label_counts: \{0: 113, 1: 112\}\
+  preprocessing: \{'bandpass_hz': \{'l_freq': 12.0, 'h_freq': 30.0\}, 'selected_channels': ['C3', 'C1', 'Cz', 'C2', 'C4', 'CP3', 'CP1', 'CPz', 'CP2', 'CP4'], 'original_channel_count': 64, 'final_channel_count': 10\}\
+Saved arrays to: data/processed/eegbci_s1_s5_lr_w05_25_motor10_12_30.npz\
+Saved metadata to: data/processed/eegbci_s1_s5_lr_w05_25_motor10_12_30.json\
+Computing rank from data with rank=None\
+    Using tolerance 2e-05 (2.2e-16 eps * 10 dim * 8.8e+09  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2e-05 (2.2e-16 eps * 10 dim * 8.8e+09  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.4889\
+  precision=0.4815\
+  recall=0.5909\
+  f1_score=0.5306\
+  confusion_matrix=[[9, 14], [9, 13]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.5333\
+  precision=0.5217\
+  recall=0.5455\
+  f1_score=0.5333\
+  confusion_matrix=[[12, 11], [10, 12]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_12_30_cmp.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.preprocess_trials \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25 \\\
+  --output-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_20 \\\
+  --l-freq 8.0 \\\
+  --h-freq 20.0 \\\
+  --channels C3,C1,Cz,C2,C4,CP3,CP1,CPz,CP2,CP4\
+\
+python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_20 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 4 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_8_20_cmp.json\
+Preprocessed dataset summary:\
+  X shape: (225, 10, 321)\
+  y shape: (225,)\
+  trial_count: 225\
+  sfreq: 160.0\
+  epoch_window: \{'tmin': 0.5, 'tmax': 2.5\}\
+  selected_event_id: \{'T1': 2, 'T2': 3\}\
+  label_map: \{'T1': 0, 'T2': 1\}\
+  subjects: [1, 2, 3, 4, 5]\
+  run_ids present: [4, 8, 12]\
+  label_counts: \{0: 113, 1: 112\}\
+  preprocessing: \{'bandpass_hz': \{'l_freq': 8.0, 'h_freq': 20.0\}, 'selected_channels': ['C3', 'C1', 'Cz', 'C2', 'C4', 'CP3', 'CP1', 'CPz', 'CP2', 'CP4'], 'original_channel_count': 64, 'final_channel_count': 10\}\
+Saved arrays to: data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_20.npz\
+Saved metadata to: data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_20.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.1e-05 (2.2e-16 eps * 10 dim * 9.6e+09  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.1e-05 (2.2e-16 eps * 10 dim * 9.6e+09  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.4222\
+  precision=0.4231\
+  recall=0.5000\
+  f1_score=0.4583\
+  confusion_matrix=[[8, 15], [11, 11]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.4222\
+  precision=0.4167\
+  recall=0.4545\
+  f1_score=0.4348\
+  confusion_matrix=[[9, 14], [12, 10]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_8_20_cmp.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.preprocess_trials \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25 \\\
+  --output-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --l-freq 8.0 \\\
+  --h-freq 30.0 \\\
+  --channels C3,C1,Cz,C2,C4,CP3,CP1,CPz,CP2,CP4\
+\
+python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 4 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_8_30_cmp.json\
+Preprocessed dataset summary:\
+  X shape: (225, 10, 321)\
+  y shape: (225,)\
+  trial_count: 225\
+  sfreq: 160.0\
+  epoch_window: \{'tmin': 0.5, 'tmax': 2.5\}\
+  selected_event_id: \{'T1': 2, 'T2': 3\}\
+  label_map: \{'T1': 0, 'T2': 1\}\
+  subjects: [1, 2, 3, 4, 5]\
+  run_ids present: [4, 8, 12]\
+  label_counts: \{0: 113, 1: 112\}\
+  preprocessing: \{'bandpass_hz': \{'l_freq': 8.0, 'h_freq': 30.0\}, 'selected_channels': ['C3', 'C1', 'Cz', 'C2', 'C4', 'CP3', 'CP1', 'CPz', 'CP2', 'CP4'], 'original_channel_count': 64, 'final_channel_count': 10\}\
+Saved arrays to: data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30.npz\
+Saved metadata to: data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.5556\
+  precision=0.5357\
+  recall=0.6818\
+  f1_score=0.6000\
+  confusion_matrix=[[10, 13], [7, 15]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.5333\
+  precision=0.5238\
+  recall=0.5000\
+  f1_score=0.5116\
+  confusion_matrix=[[13, 10], [11, 11]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_8_30_cmp.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --test-size 0.2 \\\
+  --random-state 21 \\\
+  --n-components 4 \\\
+  --output-json data/results/eegbci_w05_25_motor10_8_30_seed21.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.5333\
+  precision=0.5152\
+  recall=0.7727\
+  f1_score=0.6182\
+  confusion_matrix=[[7, 16], [5, 17]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.4667\
+  precision=0.4643\
+  recall=0.5909\
+  f1_score=0.5200\
+  confusion_matrix=[[8, 15], [9, 13]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_w05_25_motor10_8_30_seed21.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 4 \\\
+  --output-json data/results/eegbci_w05_25_motor10_8_30_seed42.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.5556\
+  precision=0.5357\
+  recall=0.6818\
+  f1_score=0.6000\
+  confusion_matrix=[[10, 13], [7, 15]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.5333\
+  precision=0.5238\
+  recall=0.5000\
+  f1_score=0.5116\
+  confusion_matrix=[[13, 10], [11, 11]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_w05_25_motor10_8_30_seed42.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --test-size 0.2 \\\
+  --random-state 84 \\\
+  --n-components 4 \\\
+  --output-json data/results/eegbci_w05_25_motor10_8_30_seed84.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.4000\
+  precision=0.4000\
+  recall=0.4545\
+  f1_score=0.4255\
+  confusion_matrix=[[8, 15], [12, 10]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.4000\
+  precision=0.3913\
+  recall=0.4091\
+  f1_score=0.4000\
+  confusion_matrix=[[9, 14], [13, 9]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_w05_25_motor10_8_30_seed84.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --test-size 0.2 \\\
+  --random-state 123 \\\
+  --n-components 4 \\\
+  --output-json data/results/eegbci_w05_25_motor10_8_30_seed123.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.4889\
+  precision=0.4865\
+  recall=0.8182\
+  f1_score=0.6102\
+  confusion_matrix=[[4, 19], [4, 18]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.4444\
+  precision=0.4545\
+  recall=0.6818\
+  f1_score=0.5455\
+  confusion_matrix=[[5, 18], [7, 15]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_w05_25_motor10_8_30_seed123.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --test-size 0.2 \\\
+  --random-state 256 \\\
+  --n-components 4 \\\
+  --output-json data/results/eegbci_w05_25_motor10_8_30_seed256.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.4444\
+  precision=0.4516\
+  recall=0.6364\
+  f1_score=0.5283\
+  confusion_matrix=[[6, 17], [8, 14]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.4889\
+  precision=0.4762\
+  recall=0.4545\
+  f1_score=0.4651\
+  confusion_matrix=[[12, 11], [12, 10]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_w05_25_motor10_8_30_seed256.json\
+(venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.train_model \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --config csp_svm \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 4 \\\
+  --artifact-prefix data/artifacts/eegbci_final_w05_25_motor10_8_30_csp_svm\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Training summary:\
+csp_svm:\
+  accuracy=0.5556\
+  precision=0.5357\
+  recall=0.6818\
+  f1_score=0.6000\
+  confusion_matrix=[[10, 13], [7, 15]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+Saved model artifact to: data/artifacts/eegbci_final_w05_25_motor10_8_30_csp_svm.joblib\
+Saved model metadata to: data/artifacts/eegbci_final_w05_25_motor10_8_30_csp_svm.json\
+\
+nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % %                                                                                                                                                               \
+nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % \
+nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python3 -m venv .venv\
+nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % source .venv/bin/activate\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python3 -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --test-size 0.2 \\\
+  --random-state 21 \\\
+  --n-components 6 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_8_30_scaled_compare_csp6_seed21.json\
+\
+Traceback (most recent call last):\
+  File "<frozen runpy>", line 198, in _run_module_as_main\
+  File "<frozen runpy>", line 88, in _run_code\
+  File "/Users/nakshatragajbhiye/Final Year Project/scripts/compare_models.py", line 8, in <module>\
+    from src.data_loader import load_trial_dataset\
+  File "/Users/nakshatragajbhiye/Final Year Project/src/data_loader.py", line 11, in <module>\
+    import mne\
+ModuleNotFoundError: No module named 'mne'\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % pip install mne\
+Collecting mne\
+  Downloading mne-1.12.0-py3-none-any.whl (7.5 MB)\
+     \uc0\u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473  7.5/7.5 MB 6.4 MB/s eta 0:00:00\
+Collecting decorator>=5.1\
+  Using cached decorator-5.2.1-py3-none-any.whl (9.2 kB)\
+Collecting jinja2>=3.1\
+  Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)\
+Collecting lazy-loader>=0.3\
+  Using cached lazy_loader-0.5-py3-none-any.whl (8.0 kB)\
+Collecting matplotlib>=3.8\
+  Using cached matplotlib-3.10.8-cp311-cp311-macosx_11_0_arm64.whl (8.1 MB)\
+Collecting numpy<3,>=1.26\
+  Using cached numpy-2.4.4-cp311-cp311-macosx_14_0_arm64.whl (5.5 MB)\
+Collecting packaging\
+  Downloading packaging-26.1-py3-none-any.whl (95 kB)\
+     \uc0\u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473  95.8/95.8 kB 4.8 MB/s eta 0:00:00\
+Collecting pooch>=1.5\
+  Using cached pooch-1.9.0-py3-none-any.whl (67 kB)\
+Collecting scipy>=1.13\
+  Using cached scipy-1.17.1-cp311-cp311-macosx_14_0_arm64.whl (20.3 MB)\
+Collecting tqdm>=4.66\
+  Using cached tqdm-4.67.3-py3-none-any.whl (78 kB)\
+Collecting MarkupSafe>=2.0\
+  Using cached markupsafe-3.0.3-cp311-cp311-macosx_11_0_arm64.whl (12 kB)\
+Collecting contourpy>=1.0.1\
+  Using cached contourpy-1.3.3-cp311-cp311-macosx_11_0_arm64.whl (270 kB)\
+Collecting cycler>=0.10\
+  Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)\
+Collecting fonttools>=4.22.0\
+  Using cached fonttools-4.62.1-cp311-cp311-macosx_10_9_universal2.whl (2.9 MB)\
+Collecting kiwisolver>=1.3.1\
+  Using cached kiwisolver-1.5.0-cp311-cp311-macosx_11_0_arm64.whl (63 kB)\
+Collecting pillow>=8\
+  Using cached pillow-12.2.0-cp311-cp311-macosx_11_0_arm64.whl (4.7 MB)\
+Collecting pyparsing>=3\
+  Using cached pyparsing-3.3.2-py3-none-any.whl (122 kB)\
+Collecting python-dateutil>=2.7\
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)\
+Collecting platformdirs>=2.5.0\
+  Downloading platformdirs-4.9.6-py3-none-any.whl (21 kB)\
+Collecting requests>=2.19.0\
+  Using cached requests-2.33.1-py3-none-any.whl (64 kB)\
+Collecting six>=1.5\
+  Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)\
+Collecting charset_normalizer<4,>=2\
+  Using cached charset_normalizer-3.4.7-cp311-cp311-macosx_10_9_universal2.whl (309 kB)\
+Collecting idna<4,>=2.5\
+  Using cached idna-3.11-py3-none-any.whl (71 kB)\
+Collecting urllib3<3,>=1.26\
+  Using cached urllib3-2.6.3-py3-none-any.whl (131 kB)\
+Collecting certifi>=2023.5.7\
+  Using cached certifi-2026.2.25-py3-none-any.whl (153 kB)\
+Installing collected packages: urllib3, tqdm, six, pyparsing, platformdirs, pillow, packaging, numpy, MarkupSafe, kiwisolver, idna, fonttools, decorator, cycler, charset_normalizer, certifi, scipy, requests, python-dateutil, lazy-loader, jinja2, contourpy, pooch, matplotlib, mne\
+Successfully installed MarkupSafe-3.0.3 certifi-2026.2.25 charset_normalizer-3.4.7 contourpy-1.3.3 cycler-0.12.1 decorator-5.2.1 fonttools-4.62.1 idna-3.11 jinja2-3.1.6 kiwisolver-1.5.0 lazy-loader-0.5 matplotlib-3.10.8 mne-1.12.0 numpy-2.4.4 packaging-26.1 pillow-12.2.0 platformdirs-4.9.6 pooch-1.9.0 pyparsing-3.3.2 python-dateutil-2.9.0.post0 requests-2.33.1 scipy-1.17.1 six-1.17.0 tqdm-4.67.3 urllib3-2.6.3\
+\
+[notice] A new release of pip available: 22.3 -> 26.0.1\
+[notice] To update, run: pip install --upgrade pip\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % pip install --upgrade pip\
+Requirement already satisfied: pip in ./.venv/lib/python3.11/site-packages (22.3)\
+Collecting pip\
+  Using cached pip-26.0.1-py3-none-any.whl (1.8 MB)\
+Installing collected packages: pip\
+  Attempting uninstall: pip\
+    Found existing installation: pip 22.3\
+    Uninstalling pip-22.3:\
+      Successfully uninstalled pip-22.3\
+Successfully installed pip-26.0.1\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % pip list | grep mne\
+mne                1.12.0\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python3 -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --test-size 0.2 \\\
+  --random-state 21 \\\
+  --n-components 6 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_8_30_scaled_compare_csp6_seed21.json\
+\
+Traceback (most recent call last):\
+  File "<frozen runpy>", line 198, in _run_module_as_main\
+  File "<frozen runpy>", line 88, in _run_code\
+  File "/Users/nakshatragajbhiye/Final Year Project/scripts/compare_models.py", line 9, in <module>\
+    from src.evaluation import (\
+  File "/Users/nakshatragajbhiye/Final Year Project/src/evaluation.py", line 10, in <module>\
+    from sklearn.metrics import (\
+ModuleNotFoundError: No module named 'sklearn'\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % pip install scikit-learn\
+Collecting scikit-learn\
+  Downloading scikit_learn-1.8.0-cp311-cp311-macosx_12_0_arm64.whl.metadata (11 kB)\
+Requirement already satisfied: numpy>=1.24.1 in ./.venv/lib/python3.11/site-packages (from scikit-learn) (2.4.4)\
+Requirement already satisfied: scipy>=1.10.0 in ./.venv/lib/python3.11/site-packages (from scikit-learn) (1.17.1)\
+Collecting joblib>=1.3.0 (from scikit-learn)\
+  Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)\
+Collecting threadpoolctl>=3.2.0 (from scikit-learn)\
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)\
+Downloading scikit_learn-1.8.0-cp311-cp311-macosx_12_0_arm64.whl (8.1 MB)\
+   \uc0\u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473 \u9473  8.1/8.1 MB 4.7 MB/s  0:00:01\
+Downloading joblib-1.5.3-py3-none-any.whl (309 kB)\
+Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)\
+Installing collected packages: threadpoolctl, joblib, scikit-learn\
+Successfully installed joblib-1.5.3 scikit-learn-1.8.0 threadpoolctl-3.6.0\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % pip install numpy scipy mne scikit-learn joblib\
+Requirement already satisfied: numpy in ./.venv/lib/python3.11/site-packages (2.4.4)\
+Requirement already satisfied: scipy in ./.venv/lib/python3.11/site-packages (1.17.1)\
+Requirement already satisfied: mne in ./.venv/lib/python3.11/site-packages (1.12.0)\
+Requirement already satisfied: scikit-learn in ./.venv/lib/python3.11/site-packages (1.8.0)\
+Requirement already satisfied: joblib in ./.venv/lib/python3.11/site-packages (1.5.3)\
+Requirement already satisfied: decorator>=5.1 in ./.venv/lib/python3.11/site-packages (from mne) (5.2.1)\
+Requirement already satisfied: jinja2>=3.1 in ./.venv/lib/python3.11/site-packages (from mne) (3.1.6)\
+Requirement already satisfied: lazy-loader>=0.3 in ./.venv/lib/python3.11/site-packages (from mne) (0.5)\
+Requirement already satisfied: matplotlib>=3.8 in ./.venv/lib/python3.11/site-packages (from mne) (3.10.8)\
+Requirement already satisfied: packaging in ./.venv/lib/python3.11/site-packages (from mne) (26.1)\
+Requirement already satisfied: pooch>=1.5 in ./.venv/lib/python3.11/site-packages (from mne) (1.9.0)\
+Requirement already satisfied: tqdm>=4.66 in ./.venv/lib/python3.11/site-packages (from mne) (4.67.3)\
+Requirement already satisfied: threadpoolctl>=3.2.0 in ./.venv/lib/python3.11/site-packages (from scikit-learn) (3.6.0)\
+Requirement already satisfied: MarkupSafe>=2.0 in ./.venv/lib/python3.11/site-packages (from jinja2>=3.1->mne) (3.0.3)\
+Requirement already satisfied: contourpy>=1.0.1 in ./.venv/lib/python3.11/site-packages (from matplotlib>=3.8->mne) (1.3.3)\
+Requirement already satisfied: cycler>=0.10 in ./.venv/lib/python3.11/site-packages (from matplotlib>=3.8->mne) (0.12.1)\
+Requirement already satisfied: fonttools>=4.22.0 in ./.venv/lib/python3.11/site-packages (from matplotlib>=3.8->mne) (4.62.1)\
+Requirement already satisfied: kiwisolver>=1.3.1 in ./.venv/lib/python3.11/site-packages (from matplotlib>=3.8->mne) (1.5.0)\
+Requirement already satisfied: pillow>=8 in ./.venv/lib/python3.11/site-packages (from matplotlib>=3.8->mne) (12.2.0)\
+Requirement already satisfied: pyparsing>=3 in ./.venv/lib/python3.11/site-packages (from matplotlib>=3.8->mne) (3.3.2)\
+Requirement already satisfied: python-dateutil>=2.7 in ./.venv/lib/python3.11/site-packages (from matplotlib>=3.8->mne) (2.9.0.post0)\
+Requirement already satisfied: platformdirs>=2.5.0 in ./.venv/lib/python3.11/site-packages (from pooch>=1.5->mne) (4.9.6)\
+Requirement already satisfied: requests>=2.19.0 in ./.venv/lib/python3.11/site-packages (from pooch>=1.5->mne) (2.33.1)\
+Requirement already satisfied: six>=1.5 in ./.venv/lib/python3.11/site-packages (from python-dateutil>=2.7->matplotlib>=3.8->mne) (1.17.0)\
+Requirement already satisfied: charset_normalizer<4,>=2 in ./.venv/lib/python3.11/site-packages (from requests>=2.19.0->pooch>=1.5->mne) (3.4.7)\
+Requirement already satisfied: idna<4,>=2.5 in ./.venv/lib/python3.11/site-packages (from requests>=2.19.0->pooch>=1.5->mne) (3.11)\
+Requirement already satisfied: urllib3<3,>=1.26 in ./.venv/lib/python3.11/site-packages (from requests>=2.19.0->pooch>=1.5->mne) (2.6.3)\
+Requirement already satisfied: certifi>=2023.5.7 in ./.venv/lib/python3.11/site-packages (from requests>=2.19.0->pooch>=1.5->mne) (2026.2.25)\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -c "import sklearn; print(sklearn.__version__)"\
+1.8.0\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 6\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.5556\
+  precision=0.5357\
+  recall=0.6818\
+  f1_score=0.6000\
+  confusion_matrix=[[10, 13], [7, 15]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+\
+csp_logreg:\
+  accuracy=0.5778\
+  precision=0.5714\
+  recall=0.5455\
+  f1_score=0.5581\
+  confusion_matrix=[[14, 9], [10, 12]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python3 -m scripts.compare_models \\            \
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --test-size 0.2 \\\
+  --random-state 21 \\\
+  --n-components 6 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_8_30_scaled_compare_csp6_seed21.json\
+\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.5556\
+  precision=0.5333\
+  recall=0.7273\
+  f1_score=0.6154\
+  confusion_matrix=[[9, 14], [6, 16]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+\
+csp_logreg:\
+  accuracy=0.5111\
+  precision=0.5000\
+  recall=0.6818\
+  f1_score=0.5769\
+  confusion_matrix=[[8, 15], [7, 15]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_8_30_scaled_compare_csp6_seed21.json\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python3 -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 6 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_8_30_scaled_compare_csp6_seed42.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.5556\
+  precision=0.5357\
+  recall=0.6818\
+  f1_score=0.6000\
+  confusion_matrix=[[10, 13], [7, 15]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+\
+csp_logreg:\
+  accuracy=0.5778\
+  precision=0.5714\
+  recall=0.5455\
+  f1_score=0.5581\
+  confusion_matrix=[[14, 9], [10, 12]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_8_30_scaled_compare_csp6_seed42.json\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python3 -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --test-size 0.2 \\\
+  --random-state 84 \\\
+  --n-components 6 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_8_30_scaled_compare_csp6_seed84.json\
+\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.3778\
+  precision=0.3846\
+  recall=0.4545\
+  f1_score=0.4167\
+  confusion_matrix=[[7, 16], [12, 10]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+\
+csp_logreg:\
+  accuracy=0.3333\
+  precision=0.3000\
+  recall=0.2727\
+  f1_score=0.2857\
+  confusion_matrix=[[9, 14], [16, 6]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_8_30_scaled_compare_csp6_seed84.json\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python3 -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --test-size 0.2 \\\
+  --random-state 123 \\\
+  --n-components 6 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_8_30_scaled_compare_csp6_seed123.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.4444\
+  precision=0.4595\
+  recall=0.7727\
+  f1_score=0.5763\
+  confusion_matrix=[[3, 20], [5, 17]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+\
+csp_logreg:\
+  accuracy=0.5333\
+  precision=0.5161\
+  recall=0.7273\
+  f1_score=0.6038\
+  confusion_matrix=[[8, 15], [6, 16]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_8_30_scaled_compare_csp6_seed123.json\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python3 -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --test-size 0.2 \\\
+  --random-state 256 \\\
+  --n-components 6 \\\
+  --output-json data/results/eegbci_s1_s5_w05_25_motor10_8_30_scaled_compare_csp6_seed256.json\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.5333\
+  precision=0.5217\
+  recall=0.5455\
+  f1_score=0.5333\
+  confusion_matrix=[[12, 11], [10, 12]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+\
+csp_logreg:\
+  accuracy=0.4889\
+  precision=0.4800\
+  recall=0.5455\
+  f1_score=0.5106\
+  confusion_matrix=[[10, 13], [10, 12]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+Saved comparison JSON to: data/results/eegbci_s1_s5_w05_25_motor10_8_30_scaled_compare_csp6_seed256.json\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python3 -m scripts.train_model \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --config csp_svm \\\
+  --test-size 0.2 \\\
+  --random-state 42 \\\
+  --n-components 6 \\\
+  --artifact-prefix data/artifacts/eegbci_s1_s5_w05_25_motor10_8_30_csp6_svm_scaled\
+Computing rank from data with rank=None\
+    Using tolerance 2.4e-05 (2.2e-16 eps * 10 dim * 1.1e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Training summary:\
+csp_svm:\
+  accuracy=0.5556\
+  precision=0.5357\
+  recall=0.6818\
+  f1_score=0.6000\
+  confusion_matrix=[[10, 13], [7, 15]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+Saved model artifact to: data/artifacts/eegbci_s1_s5_w05_25_motor10_8_30_csp6_svm_scaled.joblib\
+Saved model metadata to: data/artifacts/eegbci_s1_s5_w05_25_motor10_8_30_csp6_svm_scaled.json\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python3 -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --split-mode subject \\\
+  --train-subjects 1,2,3,4 \\\
+  --test-subjects 5 \\\
+  --n-components 4 \\\
+  --output-json data/results/eegbci_subjectwise_compare.json\
+\
+Split summary:\
+  split_mode: subject\
+  train_samples: 180\
+  test_samples: 45\
+  train_subjects: [1, 2, 3, 4]\
+  test_subjects: [5]\
+Computing rank from data with rank=None\
+    Using tolerance 2.6e-05 (2.2e-16 eps * 10 dim * 1.2e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.6e-05 (2.2e-16 eps * 10 dim * 1.2e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.4667\
+  precision=0.5000\
+  recall=0.4167\
+  f1_score=0.4545\
+  confusion_matrix=[[11, 10], [14, 10]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+\
+csp_logreg:\
+  accuracy=0.5333\
+  precision=0.6154\
+  recall=0.3333\
+  f1_score=0.4324\
+  confusion_matrix=[[16, 5], [16, 8]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+Saved comparison JSON to: data/results/eegbci_subjectwise_compare.json\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python3 -m scripts.train_model \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --config csp_svm \\\
+  --split-mode subject \\\
+  --train-subjects 1,2,3,4 \\\
+  --test-subjects 5 \\\
+  --n-components 4 \\\
+  --artifact-prefix data/artifacts/eegbci_subjectwise_csp_svm\
+\
+Split summary:\
+  split_mode: subject\
+  train_samples: 180\
+  test_samples: 45\
+  train_subjects: [1, 2, 3, 4]\
+  test_subjects: [5]\
+Computing rank from data with rank=None\
+    Using tolerance 2.6e-05 (2.2e-16 eps * 10 dim * 1.2e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Training summary:\
+csp_svm:\
+  accuracy=0.4667\
+  precision=0.5000\
+  recall=0.4167\
+  f1_score=0.4545\
+  confusion_matrix=[[11, 10], [14, 10]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=4\
+Saved model artifact to: data/artifacts/eegbci_subjectwise_csp_svm.joblib\
+Saved model metadata to: data/artifacts/eegbci_subjectwise_csp_svm.json\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.compare_models \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --split-mode subject \\\
+  --train-subjects 1,2,3,4 \\\
+  --test-subjects 5 \\\
+  --n-components 6\
+Split summary:\
+  split_mode: subject\
+  train_samples: 180\
+  test_samples: 45\
+  train_subjects: [1, 2, 3, 4]\
+  test_subjects: [5]\
+Computing rank from data with rank=None\
+    Using tolerance 2.6e-05 (2.2e-16 eps * 10 dim * 1.2e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Computing rank from data with rank=None\
+    Using tolerance 2.6e-05 (2.2e-16 eps * 10 dim * 1.2e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Model comparison summary:\
+csp_svm:\
+  accuracy=0.5333\
+  precision=0.6364\
+  recall=0.2917\
+  f1_score=0.4000\
+  confusion_matrix=[[17, 4], [17, 7]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+\
+csp_logreg:\
+  accuracy=0.5556\
+  precision=0.7000\
+  recall=0.2917\
+  f1_score=0.4118\
+  confusion_matrix=[[18, 3], [17, 7]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.train_model \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --config csp_svm \\\
+  --split-mode subject \\\
+  --train-subjects 1,2,3,4 \\\
+  --test-subjects 5 \\\
+  --n-components 6 \\\
+  --artifact-prefix data/artifacts/eegbci_subjectwise_final\
+Split summary:\
+  split_mode: subject\
+  train_samples: 180\
+  test_samples: 45\
+  train_subjects: [1, 2, 3, 4]\
+  test_subjects: [5]\
+Computing rank from data with rank=None\
+    Using tolerance 2.6e-05 (2.2e-16 eps * 10 dim * 1.2e+10  max singular value)\
+    Estimated rank (data): 10\
+    data: rank 10 computed from 10 data channels with 0 projectors\
+Reducing data rank from 10 -> 10\
+Estimating class=0 covariance using EMPIRICAL\
+Done.\
+Estimating class=1 covariance using EMPIRICAL\
+Done.\
+Training summary:\
+csp_svm:\
+  accuracy=0.5333\
+  precision=0.6364\
+  recall=0.2917\
+  f1_score=0.4000\
+  confusion_matrix=[[17, 4], [17, 7]]\
+  train_size=180, test_size=45\
+  n_channels=10, n_csp_components=6\
+Saved model artifact to: data/artifacts/eegbci_subjectwise_final.joblib\
+Saved model metadata to: data/artifacts/eegbci_subjectwise_final.json\
+\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.simulate_session \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --artifact-prefix data/artifacts/eegbci_subjectwise_final \\\
+  --subject-id 5 \\\
+  --mode full \\\
+  --output-json data/results/subject5_session.json\
+Session setup:\
+  total_trials: 45\
+  subjects_present: [5]\
+  run_ids_present: [4, 8, 12]\
+Per-trial results:\
+trial=0 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.6786 correct=False\
+trial=1 subject=5 run=4 true=T1(0) pred=T1(0) confidence=0.6077 correct=True\
+trial=2 subject=5 run=4 true=T1(0) pred=T1(0) confidence=0.6810 correct=True\
+trial=3 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.6979 correct=False\
+trial=4 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.7137 correct=False\
+trial=5 subject=5 run=4 true=T1(0) pred=T1(0) confidence=0.7551 correct=True\
+trial=6 subject=5 run=4 true=T1(0) pred=T1(0) confidence=0.6720 correct=True\
+trial=7 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.6474 correct=False\
+trial=8 subject=5 run=4 true=T1(0) pred=T2(1) confidence=0.5709 correct=False\
+trial=9 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.6675 correct=False\
+trial=10 subject=5 run=4 true=T2(1) pred=T2(1) confidence=0.5723 correct=True\
+trial=11 subject=5 run=4 true=T1(0) pred=T1(0) confidence=0.6978 correct=True\
+trial=12 subject=5 run=4 true=T1(0) pred=T1(0) confidence=0.6376 correct=True\
+trial=13 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.7953 correct=False\
+trial=14 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.5308 correct=False\
+trial=15 subject=5 run=8 true=T2(1) pred=T2(1) confidence=0.5499 correct=True\
+trial=16 subject=5 run=8 true=T1(0) pred=T1(0) confidence=0.7479 correct=True\
+trial=17 subject=5 run=8 true=T2(1) pred=T1(0) confidence=0.7770 correct=False\
+trial=18 subject=5 run=8 true=T1(0) pred=T1(0) confidence=0.6202 correct=True\
+trial=19 subject=5 run=8 true=T1(0) pred=T1(0) confidence=0.6464 correct=True\
+trial=20 subject=5 run=8 true=T2(1) pred=T1(0) confidence=0.6694 correct=False\
+trial=21 subject=5 run=8 true=T2(1) pred=T1(0) confidence=0.7262 correct=False\
+trial=22 subject=5 run=8 true=T1(0) pred=T2(1) confidence=0.6124 correct=False\
+trial=23 subject=5 run=8 true=T1(0) pred=T1(0) confidence=0.6059 correct=True\
+trial=24 subject=5 run=8 true=T2(1) pred=T1(0) confidence=0.6365 correct=False\
+trial=25 subject=5 run=8 true=T1(0) pred=T1(0) confidence=0.5675 correct=True\
+trial=26 subject=5 run=8 true=T2(1) pred=T1(0) confidence=0.6719 correct=False\
+trial=27 subject=5 run=8 true=T2(1) pred=T2(1) confidence=0.6305 correct=True\
+trial=28 subject=5 run=8 true=T1(0) pred=T2(1) confidence=0.6468 correct=False\
+trial=29 subject=5 run=8 true=T2(1) pred=T2(1) confidence=0.5798 correct=True\
+trial=30 subject=5 run=12 true=T1(0) pred=T1(0) confidence=0.6676 correct=True\
+trial=31 subject=5 run=12 true=T2(1) pred=T2(1) confidence=0.5000 correct=True\
+trial=32 subject=5 run=12 true=T1(0) pred=T1(0) confidence=0.6599 correct=True\
+trial=33 subject=5 run=12 true=T2(1) pred=T1(0) confidence=0.6056 correct=False\
+trial=34 subject=5 run=12 true=T1(0) pred=T1(0) confidence=0.5926 correct=True\
+trial=35 subject=5 run=12 true=T2(1) pred=T1(0) confidence=0.6703 correct=False\
+trial=36 subject=5 run=12 true=T1(0) pred=T1(0) confidence=0.6610 correct=True\
+trial=37 subject=5 run=12 true=T2(1) pred=T1(0) confidence=0.7964 correct=False\
+trial=38 subject=5 run=12 true=T2(1) pred=T2(1) confidence=0.5823 correct=True\
+trial=39 subject=5 run=12 true=T1(0) pred=T1(0) confidence=0.6914 correct=True\
+trial=40 subject=5 run=12 true=T2(1) pred=T1(0) confidence=0.6772 correct=False\
+trial=41 subject=5 run=12 true=T1(0) pred=T1(0) confidence=0.5903 correct=True\
+trial=42 subject=5 run=12 true=T2(1) pred=T1(0) confidence=0.6978 correct=False\
+trial=43 subject=5 run=12 true=T1(0) pred=T2(1) confidence=0.5000 correct=False\
+trial=44 subject=5 run=12 true=T2(1) pred=T2(1) confidence=0.6625 correct=True\
+Final session summary:\
+\{\
+  "current_trial_index": 45,\
+  "total_trials": 45,\
+  "processed_trials": 45,\
+  "remaining_trials": 0,\
+  "correct_count": 24,\
+  "incorrect_count": 21,\
+  "accuracy": 0.5333333333333333,\
+  "prediction_counts": \{\
+    "0": 34,\
+    "1": 11\
+  \},\
+  "last_prediction": 1,\
+  "last_prediction_name": "T2",\
+  "last_confidence": 0.6625079139870982,\
+  "last_correctness": true,\
+  "subjects_present": [\
+    5\
+  ],\
+  "run_ids_present": [\
+    4,\
+    8,\
+    12\
+  ]\
+\}\
+Saved session JSON to: data/results/subject5_session.json\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.simulate_session \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --artifact-prefix data/artifacts/eegbci_subjectwise_final \\\
+  --subject-id 5 \\\
+  --mode step\
+Session setup:\
+  total_trials: 45\
+  subjects_present: [5]\
+  run_ids_present: [4, 8, 12]\
+Per-trial results:\
+trial=0 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.6786 correct=False\
+Final session summary:\
+\{\
+  "current_trial_index": 1,\
+  "total_trials": 45,\
+  "processed_trials": 1,\
+  "remaining_trials": 44,\
+  "correct_count": 0,\
+  "incorrect_count": 1,\
+  "accuracy": 0.0,\
+  "prediction_counts": \{\
+    "0": 1,\
+    "1": 0\
+  \},\
+  "last_prediction": 0,\
+  "last_prediction_name": "T1",\
+  "last_confidence": 0.6785872703750259,\
+  "last_correctness": false,\
+  "subjects_present": [\
+    5\
+  ],\
+  "run_ids_present": [\
+    4,\
+    8,\
+    12\
+  ]\
+\}\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.simulate_adaptive_session \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --artifact-prefix data/artifacts/eegbci_subjectwise_final \\\
+  --subject-id 5 \\\
+  --mode full \\\
+  --output-json data/results/subject5_adaptive_session.json\
+Adaptive session setup:\
+  total_trials: 45\
+  subjects_present: [5]\
+  run_ids_present: [4, 8, 12]\
+trial=0 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.6786 correct=False difficulty=easy bias=balanced ratio=1:1 reason=difficulty_floor_hold\
+  feedback=Performance dropped, but difficulty is already at the minimum level. Practice remains balanced at 1:1.\
+trial=1 subject=5 run=4 true=T1(0) pred=T1(0) confidence=0.6077 correct=True difficulty=easy bias=balanced ratio=1:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Practice remains balanced at 1:1.\
+trial=2 subject=5 run=4 true=T1(0) pred=T1(0) confidence=0.6810 correct=True difficulty=easy bias=balanced ratio=1:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Practice remains balanced at 1:1.\
+trial=3 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.6979 correct=False difficulty=easy bias=balanced ratio=1:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Practice remains balanced at 1:1.\
+trial=4 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.7137 correct=False difficulty=easy bias=balanced ratio=1:1 reason=difficulty_floor_hold\
+  feedback=Performance dropped, but difficulty is already at the minimum level. Practice remains balanced at 1:1.\
+trial=5 subject=5 run=4 true=T1(0) pred=T1(0) confidence=0.7551 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=6 subject=5 run=4 true=T1(0) pred=T1(0) confidence=0.6720 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=7 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.6474 correct=False difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=8 subject=5 run=4 true=T1(0) pred=T2(1) confidence=0.5709 correct=False difficulty=easy bias=right ratio=2:1 reason=difficulty_floor_hold\
+  feedback=Performance dropped, but difficulty is already at the minimum level. Biasing practice toward the right side with a 2:1 ratio.\
+trial=9 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.6675 correct=False difficulty=easy bias=right ratio=2:1 reason=difficulty_floor_hold\
+  feedback=Performance dropped, but difficulty is already at the minimum level. Biasing practice toward the right side with a 2:1 ratio.\
+trial=10 subject=5 run=4 true=T2(1) pred=T2(1) confidence=0.5723 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=11 subject=5 run=4 true=T1(0) pred=T1(0) confidence=0.6978 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=12 subject=5 run=4 true=T1(0) pred=T1(0) confidence=0.6376 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=13 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.7953 correct=False difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=14 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.5308 correct=False difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=15 subject=5 run=8 true=T2(1) pred=T2(1) confidence=0.5499 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=16 subject=5 run=8 true=T1(0) pred=T1(0) confidence=0.7479 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=17 subject=5 run=8 true=T2(1) pred=T1(0) confidence=0.7770 correct=False difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=18 subject=5 run=8 true=T1(0) pred=T1(0) confidence=0.6202 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=19 subject=5 run=8 true=T1(0) pred=T1(0) confidence=0.6464 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=20 subject=5 run=8 true=T2(1) pred=T1(0) confidence=0.6694 correct=False difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=21 subject=5 run=8 true=T2(1) pred=T1(0) confidence=0.7262 correct=False difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=22 subject=5 run=8 true=T1(0) pred=T2(1) confidence=0.6124 correct=False difficulty=easy bias=right ratio=2:1 reason=difficulty_floor_hold\
+  feedback=Performance dropped, but difficulty is already at the minimum level. Biasing practice toward the right side with a 2:1 ratio.\
+trial=23 subject=5 run=8 true=T1(0) pred=T1(0) confidence=0.6059 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=24 subject=5 run=8 true=T2(1) pred=T1(0) confidence=0.6365 correct=False difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=25 subject=5 run=8 true=T1(0) pred=T1(0) confidence=0.5675 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=26 subject=5 run=8 true=T2(1) pred=T1(0) confidence=0.6719 correct=False difficulty=easy bias=right ratio=2:1 reason=difficulty_floor_hold\
+  feedback=Performance dropped, but difficulty is already at the minimum level. Biasing practice toward the right side with a 2:1 ratio.\
+trial=27 subject=5 run=8 true=T2(1) pred=T2(1) confidence=0.6305 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=28 subject=5 run=8 true=T1(0) pred=T2(1) confidence=0.6468 correct=False difficulty=easy bias=right ratio=2:1 reason=difficulty_floor_hold\
+  feedback=Performance dropped, but difficulty is already at the minimum level. Biasing practice toward the right side with a 2:1 ratio.\
+trial=29 subject=5 run=8 true=T2(1) pred=T2(1) confidence=0.5798 correct=True difficulty=easy bias=balanced ratio=1:1 reason=difficulty_floor_hold\
+  feedback=Performance dropped, but difficulty is already at the minimum level. Practice remains balanced at 1:1.\
+trial=30 subject=5 run=12 true=T1(0) pred=T1(0) confidence=0.6676 correct=True difficulty=easy bias=balanced ratio=1:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Practice remains balanced at 1:1.\
+trial=31 subject=5 run=12 true=T2(1) pred=T2(1) confidence=0.5000 correct=True difficulty=easy bias=balanced ratio=1:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Practice remains balanced at 1:1.\
+trial=32 subject=5 run=12 true=T1(0) pred=T1(0) confidence=0.6599 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=33 subject=5 run=12 true=T2(1) pred=T1(0) confidence=0.6056 correct=False difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=34 subject=5 run=12 true=T1(0) pred=T1(0) confidence=0.5926 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=35 subject=5 run=12 true=T2(1) pred=T1(0) confidence=0.6703 correct=False difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=36 subject=5 run=12 true=T1(0) pred=T1(0) confidence=0.6610 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=37 subject=5 run=12 true=T2(1) pred=T1(0) confidence=0.7964 correct=False difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=38 subject=5 run=12 true=T2(1) pred=T2(1) confidence=0.5823 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=39 subject=5 run=12 true=T1(0) pred=T1(0) confidence=0.6914 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=40 subject=5 run=12 true=T2(1) pred=T1(0) confidence=0.6772 correct=False difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=41 subject=5 run=12 true=T1(0) pred=T1(0) confidence=0.5903 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=42 subject=5 run=12 true=T2(1) pred=T1(0) confidence=0.6978 correct=False difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=43 subject=5 run=12 true=T1(0) pred=T2(1) confidence=0.5000 correct=False difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+trial=44 subject=5 run=12 true=T2(1) pred=T2(1) confidence=0.6625 correct=True difficulty=easy bias=right ratio=2:1 reason=maintain_difficulty\
+  feedback=Maintaining current difficulty. Biasing practice toward the right side with a 2:1 ratio.\
+Final adaptive session summary:\
+\{\
+  "total_trials": 45,\
+  "correct_count": 24,\
+  "incorrect_count": 21,\
+  "final_accuracy": 0.5333333333333333,\
+  "final_difficulty_level": "easy",\
+  "number_of_difficulty_changes": 0,\
+  "number_of_left_bias_decisions": 0,\
+  "number_of_right_bias_decisions": 37,\
+  "final_practice_bias": "right",\
+  "final_schedule_ratio": "2:1",\
+  "remaining_trials": 0\
+\}\
+Saved adaptive session JSON to: data/results/subject5_adaptive_session.json\
+(.venv) nakshatragajbhiye@Nakshatras-MacBook-Air Final Year Project % python -m scripts.simulate_adaptive_session \\\
+  --input-prefix data/processed/eegbci_s1_s5_lr_w05_25_motor10_8_30 \\\
+  --artifact-prefix data/artifacts/eegbci_subjectwise_final \\\
+  --subject-id 5 \\\
+  --mode step\
+Adaptive session setup:\
+  total_trials: 45\
+  subjects_present: [5]\
+  run_ids_present: [4, 8, 12]\
+trial=0 subject=5 run=4 true=T2(1) pred=T1(0) confidence=0.6786 correct=False difficulty=easy bias=balanced ratio=1:1 reason=difficulty_floor_hold\
+  feedback=Performance dropped, but difficulty is already at the minimum level. Practice remains balanced at 1:1.\
+Final adaptive session summary:\
+\{\
+  "total_trials": 45,\
+  "correct_count": 0,\
+  "incorrect_count": 1,\
+  "final_accuracy": 0.0,\
+  "final_difficulty_level": "easy",\
+  "number_of_difficulty_changes": 0,\
+  "number_of_left_bias_decisions": 0,\
+  "number_of_right_bias_decisions": 0,\
+  "final_practice_bias": "balanced",\
+  "final_schedule_ratio": "1:1",\
+  "remaining_trials": 44\
+\}}

@@ -1,0 +1,75 @@
+{
+  "subjects": [
+    1
+  ],
+  "run_segments_by_subject": {
+    "1": [
+      {
+        "run_id": 4,
+        "start_sample": 0,
+        "stop_sample": 19999,
+        "file_path": "/Users/nakshatragajbhiye/Final Year Project/data/eegbci/MNE-eegbci-data/files/eegmmidb/1.0.0/S001/S001R04.edf"
+      },
+      {
+        "run_id": 8,
+        "start_sample": 20000,
+        "stop_sample": 39999,
+        "file_path": "/Users/nakshatragajbhiye/Final Year Project/data/eegbci/MNE-eegbci-data/files/eegmmidb/1.0.0/S001/S001R08.edf"
+      },
+      {
+        "run_id": 12,
+        "start_sample": 40000,
+        "stop_sample": 59999,
+        "file_path": "/Users/nakshatragajbhiye/Final Year Project/data/eegbci/MNE-eegbci-data/files/eegmmidb/1.0.0/S001/S001R12.edf"
+      }
+    ]
+  },
+  "file_paths_by_subject": {
+    "1": [
+      "/Users/nakshatragajbhiye/Final Year Project/data/eegbci/MNE-eegbci-data/files/eegmmidb/1.0.0/S001/S001R04.edf",
+      "/Users/nakshatragajbhiye/Final Year Project/data/eegbci/MNE-eegbci-data/files/eegmmidb/1.0.0/S001/S001R08.edf",
+      "/Users/nakshatragajbhiye/Final Year Project/data/eegbci/MNE-eegbci-data/files/eegmmidb/1.0.0/S001/S001R12.edf"
+    ]
+  },
+  "label_names_by_value": {
+    "0": "T1",
+    "1": "T2"
+  },
+  "preprocessing": {
+    "bandpass_hz": {
+      "l_freq": 8.0,
+      "h_freq": 30.0
+    },
+    "selected_channels": [
+      "C3",
+      "Cz",
+      "C4"
+    ],
+    "original_channel_count": 64,
+    "final_channel_count": 3
+  },
+  "selected_event_id": {
+    "T1": 2,
+    "T2": 3
+  },
+  "available_event_id": {
+    "T0": 1,
+    "T1": 2,
+    "T2": 3
+  },
+  "label_map": {
+    "T1": 0,
+    "T2": 1
+  },
+  "channel_names": [
+    "C3",
+    "Cz",
+    "C4"
+  ],
+  "sfreq": 160.0,
+  "epoch_window": {
+    "tmin": 0.0,
+    "tmax": 4.0
+  },
+  "trial_count": 45
+}
