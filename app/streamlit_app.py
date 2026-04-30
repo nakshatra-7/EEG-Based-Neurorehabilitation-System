@@ -13,6 +13,7 @@ import streamlit as st
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SESSION_JSON = PROJECT_ROOT / "data" / "results" / "subject5_adaptive_session_v2.json"
+MODEL_ARTIFACT_JSON = PROJECT_ROOT / "data" / "artifacts" / "eegbci_subjectwise_final.json"
 PLAYBACK_DELAY_SEC = 0.6
 
 
@@ -229,6 +230,354 @@ def inject_styles() -> None:
             line-height: 1.5;
             margin-top: 0.6rem;
         }
+        html {
+            scroll-behavior: smooth;
+        }
+        .stApp {
+            background: #000000;
+            color: #dbeafe;
+        }
+        [data-testid="stHeader"] {
+            background: #000000;
+        }
+        [data-testid="stAppViewContainer"] {
+            background: #000000;
+        }
+        [data-testid="stSidebar"],
+        [data-testid="stSidebarContent"],
+        [data-testid="stDecoration"] {
+            background: #000000;
+        }
+        .block-container {
+            padding-top: 1.4rem;
+            padding-bottom: 2rem;
+            max-width: 1240px;
+        }
+        h1, h2, h3, h4, h5, h6,
+        .stMarkdown,
+        .stMetric label,
+        .stMetric [data-testid="stMetricValue"] {
+            color: #e5f6ff;
+        }
+        .landing-hero {
+            min-height: 92vh;
+            display: grid;
+            align-items: center;
+            padding: 2.2rem 0 4.5rem 0;
+        }
+        .project-title {
+            color: #f8fbff;
+            font-size: 3.25rem;
+            font-weight: 900;
+            letter-spacing: 0;
+            line-height: 1.05;
+            margin-bottom: 2.8rem;
+            padding-bottom: 1.1rem;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.26);
+        }
+        .hero-shell {
+            display: grid;
+            grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.78fr);
+            gap: 2rem;
+            align-items: center;
+        }
+        .hero-kicker,
+        .section-kicker {
+            color: #5eead4;
+            font-size: 0.78rem;
+            font-weight: 900;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            margin-bottom: 0.85rem;
+        }
+        .hero-title {
+            color: #f8fbff;
+            font-size: 4.7rem;
+            line-height: 0.98;
+            font-weight: 900;
+            letter-spacing: 0;
+            margin: 0 0 1.35rem 0;
+        }
+        .hero-copy {
+            color: #c6d6e2;
+            font-size: 1.24rem;
+            line-height: 1.75;
+            max-width: 720px;
+            margin-bottom: 1.55rem;
+        }
+        .hero-action-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            margin-top: 1.6rem;
+        }
+        .hero-button,
+        .hero-button-secondary {
+            border-radius: 14px;
+            display: inline-block;
+            font-weight: 900;
+            padding: 0.86rem 1.08rem;
+            text-decoration: none !important;
+        }
+        .hero-button {
+            background: #19c6c0;
+            color: #001012 !important;
+            box-shadow: none;
+        }
+        .hero-button-secondary {
+            background: #000000;
+            border: 1px solid rgba(148, 163, 184, 0.34);
+            color: #dff8ff !important;
+        }
+        .hero-visual,
+        .landing-card,
+        .metric-showcase,
+        .future-card,
+        .demo-shell,
+        .footer-shell {
+            background: #000000;
+            border: 1px solid rgba(148, 163, 184, 0.24);
+            border-radius: 14px;
+            box-shadow: none;
+        }
+        .hero-visual {
+            padding: 1.25rem;
+        }
+        .signal-panel {
+            border-radius: 14px;
+            background: #000000;
+            border: 1px solid rgba(148, 163, 184, 0.28);
+            padding: 1rem;
+        }
+        .signal-row {
+            display: grid;
+            grid-template-columns: 0.8fr 1fr 0.8fr;
+            gap: 0.65rem;
+            align-items: center;
+            margin: 0.9rem 0;
+        }
+        .wave-line {
+            height: 48px;
+            border-radius: 10px;
+            background:
+                repeating-linear-gradient(90deg, rgba(148, 163, 184, 0.14), rgba(148, 163, 184, 0.14) 1px, transparent 1px, transparent 18px),
+                #020405;
+            position: relative;
+            overflow: hidden;
+        }
+        .wave-line:after {
+            content: "";
+            position: absolute;
+            inset: 16px 0;
+            background: #5eead4;
+            clip-path: polygon(0 55%, 8% 48%, 16% 65%, 24% 35%, 32% 52%, 40% 28%, 48% 68%, 56% 42%, 64% 59%, 72% 32%, 80% 63%, 88% 46%, 100% 54%, 100% 62%, 88% 54%, 80% 71%, 72% 41%, 64% 67%, 56% 50%, 48% 78%, 40% 36%, 32% 61%, 24% 45%, 16% 75%, 8% 58%, 0 65%);
+        }
+        .flow-node {
+            color: #e0f2fe;
+            font-weight: 900;
+            text-align: center;
+            border-radius: 14px;
+            background: rgba(3, 7, 9, 0.92);
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            padding: 0.75rem 0.7rem;
+        }
+        .hero-stat-grid,
+        .landing-grid,
+        .metric-grid,
+        .future-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        .hero-stat-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            margin-top: 1rem;
+        }
+        .hero-stat {
+            border-radius: 16px;
+            background: rgba(0, 0, 0, 0.72);
+            border: 1px solid rgba(148, 163, 184, 0.16);
+            padding: 0.9rem;
+        }
+        .hero-stat strong {
+            color: #ffffff;
+            display: block;
+            font-size: 1.45rem;
+        }
+        .hero-stat span {
+            color: #9fb8ca;
+            font-size: 0.83rem;
+        }
+        .landing-section {
+            padding: 2.4rem 0;
+        }
+        .landing-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .landing-card,
+        .metric-showcase,
+        .future-card {
+            padding: 1.25rem;
+        }
+        .landing-card h3,
+        .metric-showcase h3,
+        .future-card h3 {
+            color: #f8fbff;
+            font-size: 1.18rem;
+            margin: 0 0 0.55rem 0;
+        }
+        .landing-card p,
+        .metric-showcase p,
+        .future-card p,
+        .footer-shell p {
+            color: #adc8dc;
+            font-size: 1.08rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+        .metric-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        .metric-showcase strong {
+            color: #5eead4;
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 0.2rem;
+        }
+        .future-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        .demo-shell {
+            padding: 1.2rem;
+            margin-top: 1rem;
+        }
+        .demo-heading {
+            margin-bottom: 1.1rem;
+        }
+        .demo-heading h2 {
+            color: #f8fbff;
+            font-size: 2.7rem;
+            line-height: 1.05;
+            margin: 0.25rem 0 0.55rem 0;
+        }
+        .demo-heading p {
+            color: #adc8dc;
+            line-height: 1.65;
+            max-width: 840px;
+        }
+        .app-subtitle {
+            color: #adc8dc;
+            font-size: 1.12rem;
+        }
+        .status-banner,
+        .demo-card,
+        .detail-box,
+        .feedback-box,
+        .summary-card {
+            background: rgba(5, 8, 10, 0.9);
+            border-color: rgba(148, 163, 184, 0.2);
+            color: #cfe7f7;
+        }
+        .demo-card {
+            box-shadow: 0 18px 60px rgba(0, 0, 0, 0.24);
+        }
+        .card-title,
+        .detail-value,
+        .summary-title,
+        .transcript-header h2 {
+            color: #f8fbff;
+        }
+        .detail-label,
+        .track-labels,
+        .trial-meta,
+        .summary-text {
+            color: #9fb8ca;
+        }
+        .track-line {
+            background: linear-gradient(90deg, #080d10, #111b21);
+        }
+        .target-marker {
+            border-color: #557184;
+            background: #0b1620;
+        }
+        .target-marker.active {
+            border-color: #5eead4;
+            background: #134e4a;
+            box-shadow: 0 0 0 8px rgba(20, 184, 166, 0.16);
+        }
+        .pill-neutral {
+            background: rgba(148, 163, 184, 0.16);
+            color: #cbd5e1;
+        }
+        .reason-chip {
+            background: rgba(37, 99, 235, 0.18);
+            color: #bfdbfe;
+        }
+        .complete-banner {
+            background: rgba(20, 184, 166, 0.12);
+            border-color: rgba(94, 234, 212, 0.32);
+            color: #99f6e4;
+        }
+        .stButton > button {
+            background: linear-gradient(135deg, #22d3ee, #14b8a6);
+            border: 1px solid rgba(148, 163, 184, 0.28);
+            border-radius: 14px;
+            color: #001012;
+            font-weight: 900;
+        }
+        .stButton > button:disabled {
+            background: rgba(16, 24, 28, 0.9);
+            color: #7f95a8;
+            border-color: rgba(148, 163, 184, 0.12);
+        }
+        .stDataFrame,
+        [data-testid="stDataFrame"] {
+            background: rgba(8, 21, 31, 0.88);
+        }
+        .footer-shell {
+            padding: 1.4rem;
+            margin-top: 2.2rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr repeat(3, minmax(0, 0.6fr));
+            gap: 1rem;
+            align-items: start;
+        }
+        .footer-shell h3,
+        .footer-shell strong {
+            color: #f8fbff;
+        }
+        .footer-link {
+            color: #5eead4;
+            display: block;
+            margin-top: 0.35rem;
+            text-decoration: none !important;
+        }
+        @media (max-width: 920px) {
+            .hero-shell,
+            .landing-grid,
+            .metric-grid,
+            .future-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-stat-grid {
+                grid-template-columns: 1fr;
+            }
+            .landing-hero {
+                min-height: auto;
+                padding-top: 1rem;
+            }
+            .hero-title {
+                font-size: 3rem;
+            }
+            .project-title {
+                font-size: 2.2rem;
+            }
+            .demo-heading h2 {
+                font-size: 2rem;
+            }
+        }
         </style>
         """,
         unsafe_allow_html=True,
@@ -262,6 +611,248 @@ def load_session_payload(json_path: Path) -> dict[str, Any]:
     if not isinstance(history, list) or not history:
         raise ValueError("Session JSON must contain a non-empty 'history' list.")
     return payload
+
+
+def load_project_metrics() -> dict[str, Any]:
+    """Load project metrics for the landing-page summary cards."""
+
+    metrics: dict[str, Any] = {
+        "model_accuracy": 0.0,
+        "model_precision": 0.0,
+        "model_f1": 0.0,
+        "session_accuracy": 0.0,
+        "total_trials": 0,
+        "difficulty_changes": 0,
+        "final_difficulty": "N/A",
+        "final_bias": "N/A",
+        "train_subjects": "N/A",
+        "test_subjects": "N/A",
+        "channels": 10,
+        "epoch_window": "0.5-2.5s",
+    }
+
+    try:
+        artifact_payload = json.loads(MODEL_ARTIFACT_JSON.read_text())
+        evaluation = artifact_payload.get("evaluation", {})
+        metrics.update(
+            {
+                "model_accuracy": float(evaluation.get("accuracy", 0.0)),
+                "model_precision": float(evaluation.get("precision", 0.0)),
+                "model_f1": float(evaluation.get("f1_score", 0.0)),
+                "train_subjects": ", ".join(
+                    str(item) for item in artifact_payload.get("train_subjects", [])
+                ) or "N/A",
+                "test_subjects": ", ".join(
+                    str(item) for item in artifact_payload.get("test_subjects", [])
+                ) or "N/A",
+                "channels": int(evaluation.get("n_channels", metrics["channels"])),
+                "epoch_window": (
+                    f"{artifact_payload.get('epoch_window', {}).get('tmin', 0.5)}-"
+                    f"{artifact_payload.get('epoch_window', {}).get('tmax', 2.5)}s"
+                ),
+            }
+        )
+    except Exception:
+        pass
+
+    try:
+        session_payload = json.loads(DEFAULT_SESSION_JSON.read_text())
+        adaptive_summary = session_payload.get("adaptive_summary", {})
+        metrics.update(
+            {
+                "session_accuracy": float(adaptive_summary.get("final_accuracy", 0.0)),
+                "total_trials": int(adaptive_summary.get("total_trials", 0)),
+                "difficulty_changes": int(
+                    adaptive_summary.get("number_of_difficulty_changes", 0)
+                ),
+                "final_difficulty": str(
+                    adaptive_summary.get("final_difficulty_level", "N/A")
+                ).title(),
+                "final_bias": str(adaptive_summary.get("final_practice_bias", "N/A")).title(),
+            }
+        )
+    except Exception:
+        pass
+
+    return metrics
+
+
+def percent_text(value: float) -> str:
+    """Format a fractional metric as a percentage string."""
+
+    return f"{value * 100:.2f}%"
+
+
+def render_landing_page() -> None:
+    """Render the narrative hero and project overview before the demo controls."""
+
+    metrics = load_project_metrics()
+    st.markdown(
+        f"""
+        <section class="landing-hero">
+          <div class="project-title">EEG-Based Neurorehabilitation System</div>
+          <div class="hero-shell">
+            <div>
+              <div class="hero-kicker">EEG motor-imagery classification and adaptive feedback</div>
+              <h1 class="hero-title">A signal-driven rehabilitation demo for left and right motor intent.</h1>
+              <p class="hero-copy">
+                This project uses EEG motor-imagery data to classify imagined left and right
+                movement. The decoded output is connected to a rehabilitation-style task where
+                each prediction updates the session state, feedback, and adaptive controller.
+              </p>
+              <p class="hero-copy">
+                The system is built as an offline research playback: EEG trials are processed,
+                model confidence is tracked, and the controller adjusts difficulty and practice
+                bias. The aim is to show how machine learning can support more responsive
+                neurorehabilitation sessions.
+              </p>
+              <div class="hero-action-row">
+                <a class="hero-button" href="#demo-workflow">Open the playback demo</a>
+                <a class="hero-button-secondary" href="#project-metrics">See model accuracy</a>
+              </div>
+            </div>
+            <div class="hero-visual">
+              <div class="signal-panel">
+                <div class="signal-row">
+                  <div class="flow-node">EEG Signal</div>
+                  <div class="wave-line"></div>
+                  <div class="flow-node">ML Decoder</div>
+                </div>
+                <div class="signal-row">
+                  <div class="flow-node">Motor Intent</div>
+                  <div class="wave-line"></div>
+                  <div class="flow-node">Adaptive Task</div>
+                </div>
+                <div class="hero-stat-grid">
+                  <div class="hero-stat">
+                    <strong>{metrics["channels"]}</strong>
+                    <span>motor cortex EEG channels</span>
+                  </div>
+                  <div class="hero-stat">
+                    <strong>{metrics["epoch_window"]}</strong>
+                    <span>signal window</span>
+                  </div>
+                  <div class="hero-stat">
+                    <strong>{metrics["final_difficulty"]}</strong>
+                    <span>final adaptive level</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="landing-section">
+          <div class="section-kicker">How the system helps</div>
+          <div class="landing-grid">
+            <div class="landing-card">
+              <h3>Transforms EEG into intent</h3>
+              <p>
+                Motor-imagery EEG is filtered, windowed, and converted into CSP features so the
+                model can classify imagined left/right movement.
+              </p>
+            </div>
+            <div class="landing-card">
+              <h3>Adapts therapy pressure</h3>
+              <p>
+                The controller uses correctness, confidence, error streaks, and side imbalance to
+                tune difficulty and practice ratio across the session.
+              </p>
+            </div>
+            <div class="landing-card">
+              <h3>Explains each decision</h3>
+              <p>
+                Every trial records prediction, confidence, outcome, difficulty, bias, and feedback
+                so the rehab workflow is easier to inspect and present.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="landing-section" id="project-metrics">
+          <div class="section-kicker">Model and session performance</div>
+          <div class="metric-grid">
+            <div class="metric-showcase">
+              <strong>{percent_text(metrics["model_accuracy"])}</strong>
+              <h3>Model accuracy</h3>
+              <p>Subject-wise CSP + SVM evaluation trained on subjects {escape(metrics["train_subjects"])} and tested on subject {escape(metrics["test_subjects"])}.</p>
+            </div>
+            <div class="metric-showcase">
+              <strong>{percent_text(metrics["model_precision"])}</strong>
+              <h3>Precision</h3>
+              <p>Precision from the saved evaluation artifact, useful for explaining prediction reliability during the demo.</p>
+            </div>
+            <div class="metric-showcase">
+              <strong>{percent_text(metrics["session_accuracy"])}</strong>
+              <h3>Adaptive session accuracy</h3>
+              <p>{metrics["total_trials"]} replayed trials with {metrics["difficulty_changes"]} difficulty changes and final bias set to {escape(metrics["final_bias"])}.</p>
+            </div>
+            <div class="metric-showcase">
+              <strong>{percent_text(metrics["model_f1"])}</strong>
+              <h3>F1 score</h3>
+              <p>A balanced view of precision and recall for the motor-imagery classifier in this prototype.</p>
+            </div>
+          </div>
+        </section>
+
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_demo_intro() -> None:
+    """Render a visual wrapper before the existing playback workflow."""
+
+    st.markdown(
+        """
+        <section class="demo-shell" id="demo-workflow">
+          <div class="demo-heading">
+            <div class="section-kicker">Interactive playback</div>
+            <h2>Load the saved EEG rehabilitation session and watch the controller adapt.</h2>
+            <p>
+              The original app starts here. Use the controls below to load the dataset, play
+              the session, step through individual trials, and inspect the model/controller state.
+            </p>
+          </div>
+        </section>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_footer() -> None:
+    """Render footer contact and project information."""
+
+    st.markdown(
+        """
+        <footer class="footer-shell">
+          <div class="footer-grid">
+            <div>
+              <h3>Contact Us</h3>
+              <p>
+                EEG-Based Adaptive Neurorehabilitation System. Built as a final year project
+                demonstrating AI-assisted motor-imagery rehabilitation and adaptive feedback.
+              </p>
+            </div>
+            <div>
+              <strong>Project</strong>
+              <a class="footer-link" href="#demo-workflow">Playback demo</a>
+              <a class="footer-link" href="#project-metrics">Accuracy</a>
+            </div>
+            <div>
+              <strong>Research Focus</strong>
+              <p>EEG, CSP, SVM, adaptive control, motor imagery.</p>
+            </div>
+            <div>
+              <strong>Get in touch</strong>
+              <p>For demo queries, model details, or collaboration.</p>
+              <a class="footer-link" href="mailto:contact@example.com">contact@example.com</a>
+            </div>
+          </div>
+        </footer>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 def reset_playback_state(payload: dict[str, Any]) -> None:
@@ -755,6 +1346,9 @@ def main() -> None:
     )
     inject_styles()
     initialize_app_state()
+
+    render_landing_page()
+    render_demo_intro()
 
     st.title("EEG-Based Adaptive Neurorehabilitation Demo")
     st.markdown(
